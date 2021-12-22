@@ -1,3 +1,81 @@
+export class Heros {
+    constructor(nom, pv, atk){
+        this.nom = nom;
+        this.pv = pv;
+        this.atk = atk
+    }
+    attaque = () => {
+
+    }
+    defense = () => {
+
+    }
+}
+
+
+export class Guerrier extends Heros {
+    constructor(nom, pv, atk, rage){
+        super(nom, pv, atk)
+        this.rage = rage;
+    }
+    rageActivated = () => {
+
+    }
+}
+
+export class Mage extends Heros {
+    constructor(nom, pv, atk, mana){
+        super(nom, pv, atk)
+        this.mana = mana;
+        let rndMana = Math.floor(Math.random() * 3)
+        switch (rndMana) {
+            case 1:
+                this.mana = 7
+                break;
+            case 2:
+                this.mana = 9
+                break;
+            case 3:
+                this.mana = 11
+        }
+    }
+    atkSansMana = () => {
+
+    }
+}
+
+
+export class Archer extends Heros {
+    constructor(nom, pv, atk, fleches){
+        super(nom, pv, atk)
+        this.fleches = fleches;
+        let rndfleches = Math.floor(Math.random() * 5)
+        switch (rndfleches) {
+            case 1:
+                this.fleches = 7
+                break;
+            case 2:
+                this.fleches = 8
+                break;
+            case 3:
+                this.fleches = 9
+                break;
+            case 4:
+                this.fleches = 10
+                break;
+            case 5:
+                this.fleches = 11
+                break;
+        }
+    }
+    atk2fleches = () => {
+        
+    }
+}
+
+
+
+
 export class Boss {
     constructor(nom, pv, atk) {
         this.nom = nom;

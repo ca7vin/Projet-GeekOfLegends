@@ -10,15 +10,6 @@
 // *console.log("Casar perd 30 de vie");*
 // ## Instructions du jeu :
 // #### Il te faut créer :
-import { Boss } from "./class.js";
-
-let Sauron = new Boss("Sauron", 50, 5)
-let Chronos = new Boss("Chronos", 60 , 4)
-let Lilith = new Boss("Lilith", 55 , 6)
-
-console.log(Chronos)
-console.log(Lilith);
-console.log(Sauron);
 // ### - Trois boss(Sauron,Chronos,Lilith).
 //  Chaque boss possédera les propriétés suivantes :
 // >* Un nom;
@@ -38,11 +29,33 @@ console.log(Sauron);
 // >* Que fait retourne Math.floor(1.3 * 10) ?
 
 // >* Le choix du type d'enigme est à votre guise cela peut même être un mix des styles
+import { Boss } from "./class.js";
+
+let Sauron = new Boss("Sauron", 50, 5)
+let Chronos = new Boss("Chronos", 60 , 4)
+let Lilith = new Boss("Lilith", 55 , 6)
+
+console.log(Chronos)
+console.log(Lilith);
+console.log(Sauron);
 
 
 // ### - Trois héros : Un mage, Un guerrier, Un archer.
 // Avec les propriétés et actions suivantes :
+import { Heros } from "./class.js";
+import { Guerrier } from "./class.js";
+import { Mage } from "./class.js";
+import { Archer } from "./class.js";
 
+
+let bobo = new Heros("Bobo", 15, 2);
+let babar = new Guerrier("Babar", 40, 3, 0);
+let gugusse = new Mage("Gugusse", 25, 5);
+let crotte = new Archer("Crotte", 35, 3)
+console.log(bobo);
+console.log(babar)
+console.log(gugusse)
+console.log(crotte)
 // ### Le guerrier
 // - Propriétés :
 
