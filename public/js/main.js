@@ -10,7 +10,30 @@
 // *console.log("Casar perd 30 de vie");*
 // ## Instructions du jeu :
 // #### Il te faut créer :
+class Boss {
+    constructor(nom, pv, atk) {
+        this.nom = nom;
+        this.pv = pv;
+        this.atk = atk;
+    }
+    enigme = () => {
+        while (this.pv >= 0.2 * (this.pv)) {
+            let enigmeCase = Math.floor(Math.random() * 3)
+            console.log(`${this.nom} vous pose une énigme...`)
+            switch (enigmeCase) {
+                case 1:
+                    let enigme = prompt("Elles sont jumelles, aussi fragiles que des ailes de papillon mais elles peuvent faire disparaître le monde. Qui sont-elles ?")
+                    break;
+                case 2:
 
+                    break;
+                case 3:
+
+                    break;
+            }
+        }
+    }
+}
 // ### - Trois boss(Sauron,Chronos,Lilith).
 //  Chaque boss possédera les propriétés suivantes :
 // >* Un nom;
