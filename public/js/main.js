@@ -30,6 +30,113 @@ console.log(perso1);
 console.log(perso2)
 console.log(perso3)
 console.log(perso4);
+
+
+// CHOIX DU BOSS
+let rndBoss = Math.floor(Math.random() * (3 - 1) + 1)
+let mainBoss
+switch (rndBoss) {
+    case 1:
+        mainBoss = Chronos
+        alert(`Vous vous préparez à affrontez ${Chronos.nom}`)
+        break;
+    case 2:
+        mainBoss = Sauron
+        alert(`Vous vous préparez à affrontez ${Sauron.nom}`)
+        break;
+    case 3:
+        mainBoss = Lilith
+        alert(`Vous vous préparez à affrontez ${Lilith.nom}`)
+        break;
+}
+
+
+// POSTURES
+/* perso1 */
+let posture1 = prompt(`Quelle posture voulez-vous adopter pour ${perso1.nom} : normal, attaque, défense ?`)
+switch (posture1) {
+    case "attaque":
+        perso1.attaque()
+        break;
+    case "défense":
+        perso1.defense()
+        break;
+    case "normal":
+        perso1.normal()
+}
+
+/* perso2 */
+let posture2 = prompt(`Quelle posture voulez-vous adopter pour ${perso2.nom} : normal, attaque, défense ?`)
+switch (posture2) {
+    case "attaque":
+        perso2.attaque()
+        break;
+    case "défense":
+        perso2.defense()
+        break;
+    case "normal":
+        perso2.normal()
+}
+
+/* perso3 */
+let posture3 = prompt(`Quelle posture voulez-vous adopter pour ${perso3.nom} : normal, attaque, défense ?`)
+switch (posture3) {
+    case "attaque":
+        perso3.attaque()
+        break;
+    case "défense":
+        perso3.defense()
+        break;
+    case "normal":
+        perso3.normal()
+}
+
+/* perso4 */
+let posture4 = prompt(`Quelle posture voulez-vous adopter pour ${perso4.nom} : normal, attaque, défense ?`)
+switch (posture4) {
+    case "attaque":
+        perso4.attaque()
+        break;
+    case "défense":
+        perso4.defense()
+        break;
+    case "normal":
+        perso4.normal()
+}
+
+// COMBAT
+let turn = 1
+while (mainBoss.pv > 0 && perso1.pv > 0 && perso2.pv > 0 && perso3.pv > 0 && perso4.pv > 0) {
+    alert(`Le tour ${turn} commence !`)
+    perso1.atkEnnemi(mainBoss)
+    perso2.atkEnnemi(mainBoss)
+    perso3.atkEnnemi(mainBoss)
+    perso4.atkEnnemi(mainBoss)
+    let rdnTarget = Math.floor(Math.random() * (4 - 1) + 1)
+    switch (rdnTarget) {
+        case 1:
+            mainBoss.atkHeros(perso1)
+            break;
+        case 2:
+            mainBoss.atkHeros(perso2)
+            break;
+        case 3:
+            mainBoss.atkHeros(perso3)
+            break;
+        case 4:
+            mainBoss.atkHeros(perso4)
+    }
+    if (mainBoss.pv < (mainBoss.pv * 0.2)) {
+        mainBoss.enigme()
+    }
+    alert(`${mainBoss.nom} : ${mainBoss.pv} PV ||${perso1.nom} : ${perso1.pv} PV ||${perso2.nom} : ${perso2.pv} PV ||${perso3.nom} : ${perso3.pv} PV ||${perso4.nom} : ${perso4.pv} PV`)
+    alert(`Fin du tour ${turn}`)
+    turn = turn + 1
+}
+
+
+
+
 // ### Le guerrier
 
 //   #### A Savoir sur le guerrier
