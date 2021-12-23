@@ -1,14 +1,21 @@
 export class Heros {
-    constructor(nom, pv, atk){
-        this.nom = nom;
+    constructor(pv, atk){
+        this.nom = prompt(`Comment se nomme votre héros ?`);
         this.pv = pv;
         this.atk = atk
     }
+    normal = () => {
+        this.atk = this.atk
+        this.pv = this.pv
+    }
     attaque = () => {
-
+        this.atk = this.atk * 1.4
+        this.pv = this.pv * 0.75
+        console.log(`${this.nom} adopte la posture d'attaque : son attaque passe à ${this.atk} mais ses PV passent à ${this.pv}`);
     }
     defense = () => {
-
+        this.atk = this.atk * 0.5
+        this.pv = this.pv * 2.5
     }
 }
 
@@ -83,8 +90,9 @@ export class Boss {
         this.atk = atk;
     }
     enigme = () => {
-        let enigmeCase = Math.floor(Math.random() * 3)
-        console.log(`${this.nom} vous pose une énigme...`)
+        let enigmeCase = Math.floor(Math.random() * (3 - 1) + 1)
+        alert(`${this.nom} vous pose une énigme... la numéro : ${enigmeCase}`)
+
         switch (enigmeCase) {
             case 1:
                 let enigme = prompt("Elles sont jumelles, fragiles comme des ailes de papillons pourtant, elles peuvent effacer le monde. Qui sont-elles?")
@@ -92,12 +100,12 @@ export class Boss {
                 let nbTry = 1
                 while (nbTry < 3 && answ != enigme) {
                     enigme = prompt(`Vous vous êtes trompés pour l'essai ${nbTry}. Retentez !`)
-                    if (nbTry > 3 && answ != enigme) {
-                        alert(`Vous êtes tous mort. ${this.nom} vous a vaincu !`)
-                    } else if (nbTry <= 3 && answ == enigme) {
-                        alert(`Vous avez triomphé de ${this.nom} !`)
-                    }
                     nbTry = nbTry + 1
+                }
+                if (answ != enigme) {
+                    alert(`Vous êtes tous mort. ${this.nom} vous a vaincu !`)
+                } else if (answ == enigme) {
+                    alert(`Vous avez triomphé de ${this.nom} !`)
                 }
                 break;
             case 2:
@@ -106,12 +114,12 @@ export class Boss {
                 let nbTry2 = 1
                 while (nbTry2 < 3 && answ2 != enigme2) {
                     enigme2 = prompt(`Vous vous êtes trompés pour l'essai ${nbTry2}. Retentez !`)
-                    if (nbTry2 > 3 && answ2 != enigme2) {
-                        alert(`Vous êtes tous mort. ${this.nom} vous a vaincu !`)
-                    } else if (nbTry2 <= 3 && answ2 == enigme2) {
-                        alert(`Vous avez triomphé de ${this.nom} !`)
-                    }
                     nbTry2 = nbTry2 + 1
+                }
+                if (nbTry2 > 3 && answ2 != enigme2) {
+                    alert(`Vous êtes tous mort. ${this.nom} vous a vaincu !`)
+                } else if (nbTry2 <= 3 && answ2 == enigme2) {
+                    alert(`Vous avez triomphé de ${this.nom} !`)
                 }
                 break;
             case 3:
@@ -120,12 +128,12 @@ export class Boss {
                 let nbTry3 = 1
                 while (nbTry3 < 3 && answ3 != enigme3) {
                     enigme3 = prompt(`Vous vous êtes trompés pour l'essai ${nbTry3}. Retentez !`)
-                    if (nbTry3 > 3 && answ3 != enigme3) {
-                        alert(`Vous êtes tous mort. ${this.nom} vous a vaincu !`)
-                    } else if (nbTry3 <= 3 && answ3 == enigme3) {
-                        alert(`Vous avez triomphé de ${this.nom} !`)
-                    }
                     nbTry3 = nbTry3 + 1
+                }
+                if (nbTry3 > 3 && answ3 != enigme3) {
+                    alert(`Vous êtes tous mort. ${this.nom} vous a vaincu !`)
+                } else if (nbTry3 <= 3 && answ3 == enigme3) {
+                    alert(`Vous avez triomphé de ${this.nom} !`)
                 }
                 break;
         }

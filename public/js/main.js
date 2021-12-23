@@ -1,34 +1,8 @@
 // # GeekOfLegends
 
-// ## Consigne de travail :
-// >* Créer un repository Github et Faire des commits avec des noms cohérent et explicite
-// >* Utiliser la structure de dossier apprise en classe
-// >* Utiliser de manière approfondie la matière c'est a dire, utiliser les class, les imports les extends.
-// >* L'histoire doit être raconté dans la console en utilisant un maximum le code pour retourner les infos par exemple :
-// J'ai un objet dont le nom est "Casar" dans la console je ferais apparaitre : "Casar perd 30 de vie" je ferais
-// *console.log(casar.nom + " perd " + boss.attaque + " de vie" );*  et non pas
-// *console.log("Casar perd 30 de vie");*
-// ## Instructions du jeu :
-// #### Il te faut créer :
-// ### - Trois boss(Sauron,Chronos,Lilith).
-//  Chaque boss possédera les propriétés suivantes :
-// >* Un nom;
-// >* Un nombre de points de vie;
-// >* Un nombre de points d'attaque.
-
 // #### A Savoir sur les boss :
 // >* une fois le boss à 20% de ses points de vie, il posera à tes personnages (l'utilisateur) une énigme (choisie aléatoirement entre minimum 3 énigmes) à laquelle ils devront répondre en 3 essais au maximum, s'ils échouent, ils mourront, sinon ils vaincront le boss.
 
-
-// #### Exemples d'énigmes traditionnelles :
-// >* Une fois que l'on me prononce, je n'existe plus. Qui suis-je ?
-// >* Je suis d'eau,je suis d'air,et je suis d'électricité. Qui suis-je ?
-// #### Exemples d'énigmes pouvant être obtenu via des commande Javascript :
-// >* Quel heure est-il ?(écriture informatisée)
-// >* Quel est l'indice du premier "i" de cette question ?
-// >* Que fait retourne Math.floor(1.3 * 10) ?
-
-// >* Le choix du type d'enigme est à votre guise cela peut même être un mix des styles
 import { Boss } from "./class.js";
 
 let Sauron = new Boss("Sauron", 50, 5)
@@ -48,53 +22,25 @@ import { Mage } from "./class.js";
 import { Archer } from "./class.js";
 
 
-let bobo = new Heros("Bobo", 15, 2);
-let babar = new Guerrier("Babar", 40, 3, 0);
-let gugusse = new Mage("Gugusse", 25, 5);
-let crotte = new Archer("Crotte", 35, 3)
-console.log(bobo);
-console.log(babar)
-console.log(gugusse)
-console.log(crotte)
+let perso1 = new Heros(15, 2);
+let perso2 = new Guerrier(40, 3, 0);
+let perso3 = new Mage(25, 5);
+let perso4 = new Archer(35, 3)
+console.log(perso1);
+console.log(perso2)
+console.log(perso3)
+console.log(perso4);
 // ### Le guerrier
-// - Propriétés :
-
-//   >* nom
-//   >* points de vie
-//   >* points d'attaque
-//   >* point de rage : 0
-
-// - Actions :
-//   >* defense
-//   >* attaque
 
 //   #### A Savoir sur le guerrier
 //   >* Tous les tours le guerrier gagne 1 point de rage au bout de 4 points ,le guerrier gagne 25% ( * 1.25 ) d'attaque supplémentaire durant 1 tours puis retombe à 0 de rage et perd ce bonus.
 
 // ### Le mage
-// - Propriétés :
-//   >* nom
-//   >* points de vie
-//   >* points d'attaque
-//   >* point de mana : chiffre qui sera aléatoirement imposé entre les suivants 7 , 9 ou 11.
-
-// - Actions :
-//   >* defense
-//   >* attaque
 
 //   #### A Savoir sur le mage
 //   >* Les attaques du mage lui coute 2 points quand il n'a plus assez de point de mana pour attaquer,il passe 1 tour sans attaquer et il récupère 7 points de mana
 
 // ### L'archer
-// - Propriétés :
-//   >* nom;
-//   >* points de vie
-//   >* points d'attaque
-//   >* nombre de flêches : chiffre qui sera aléatoirement imposé entre  7, 8 , 9 ,10 ,11.
-
-// - Actions :
-//   >* defense
-//   >* attaque
 
 //   #### A Savoir sur l'archer
 //   >* les attaques de l'archer consomme deux flèches par tour et récupère une flèche chaque tour.Quand il n'a plus de flèches il passe un tour et récupère 6 flèches.
